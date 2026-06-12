@@ -1,0 +1,47 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Build (static export)
+        env:
+          # Em GitHub Pages o site fica em /<nome-do-repo>
+          NEXT_PUBLIC_BASE_PATH: /${{ github.event.repository.name }}
+          # Chaves públicas do Supabase (anon key é pública por design)
+          NEXT_PUBLIC_SUPABASE_URL: https://nmfafbbshidwhymqerrl.supabase.co
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5tZmFmYmJzaGlkd2h5bXFlcnJsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODExMzkyODQsImV4cCI6MjA5NjcxNTI4NH0.Smcj-nkbCRHXqhG-VzJWBa4ZgGW2a25MqtLmgi_T9QU
+        run: npm run build
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
