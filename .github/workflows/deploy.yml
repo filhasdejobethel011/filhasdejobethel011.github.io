@@ -26,8 +26,7 @@ jobs:
       - run: npm ci
       - name: Build (static export)
         env:
-          # Em GitHub Pages o site fica em /<nome-do-repo>
-          NEXT_PUBLIC_BASE_PATH: /${{ github.event.repository.name }}
+          # Repo <user>.github.io → site na raiz, sem basePath
           # Chaves públicas do Supabase (anon key é pública por design)
           NEXT_PUBLIC_SUPABASE_URL: https://nmfafbbshidwhymqerrl.supabase.co
           NEXT_PUBLIC_SUPABASE_ANON_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5tZmFmYmJzaGlkd2h5bXFlcnJsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODExMzkyODQsImV4cCI6MjA5NjcxNTI4NH0.Smcj-nkbCRHXqhG-VzJWBa4ZgGW2a25MqtLmgi_T9QU
