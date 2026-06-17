@@ -1,17 +1,21 @@
 import PublicNav from '@/components/PublicNav'
 import { asset } from '@/lib/asset'
 
-// Ordem por número de gestão (mais antigo → mais recente)
-const ORDEM = [
-  1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,
-  45, 13, 14, 15, 46, 16, 17, 18, 19, 47, 48, 20, 49, 21, 22, 23, 50,
-  24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38,
-  39, 40, 41, 42, 43, 44,
+// Honoráveis Rainhas (Past Honored Queens) do Betel Nº 011.
+// Ordem alfabética por enquanto — ajustar para a ordem das gestões quando confirmada.
+const RAINHAS = [
+  { n: 1, nome: 'Bárbara' },
+  { n: 2, nome: 'Cotrim' },
+  { n: 3, nome: 'Gabriella' },
+  { n: 4, nome: 'Ingrid' },
+  { n: 5, nome: 'Isabela' },
+  { n: 6, nome: 'Julia' },
+  { n: 7, nome: 'Laysa' },
+  { n: 8, nome: 'Ludmilla' },
+  { n: 9, nome: 'Marina' },
 ]
 
 export default function AntigosMCPage() {
-  const fotos = ORDEM.map(n => `/pastmc/pastmc-${n}.jpg`)
-
   return (
     <>
       <PublicNav />
@@ -23,14 +27,15 @@ export default function AntigosMCPage() {
         </p>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
-          {fotos.map((src, i) => (
-            <div key={i} className="overflow-hidden rounded-xl" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)' }}>
+          {RAINHAS.map(({ n, nome }) => (
+            <div key={n} className="overflow-hidden rounded-xl" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)' }}>
               <img
-                src={asset(src)}
-                alt={`Past Honored Queen ${i + 1}`}
+                src={asset(`/pastmc/pastmc-${n}.jpg`)}
+                alt={`Honorável Rainha ${nome}`}
                 loading="lazy"
                 className="w-full h-auto block"
               />
+              <p className="text-center text-sm font-semibold py-3 px-2 text-white">{nome}</p>
             </div>
           ))}
         </div>
