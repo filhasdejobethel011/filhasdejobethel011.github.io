@@ -45,45 +45,71 @@ export default function HistoriaPage() {
 
         <main className="relative z-10 max-w-3xl mx-auto px-5 md:px-8 py-12 md:py-16 text-white">
           <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: '#6d28d9' }}>Nossa História</p>
-          <h1 className="text-3xl md:text-4xl font-black tracking-tight mb-6 md:mb-8">Betel Nº 011 — Lírios de Keren</h1>
+          <h1 className="text-3xl md:text-4xl font-black tracking-tight mb-6 md:mb-8">Bethel Nº 011 — Lírios de Keren</h1>
           <div className="space-y-5 text-base leading-relaxed" style={{ color: 'rgba(255,255,255,0.7)' }}>
             <p>
-              O Betel Nº 011 é uma das mais importantes organizações juvenis
-              da cidade de Caldas Novas, Goiás, integrando as Filhas de Jó Internacional, instituição
-              dedicada à formação de jovens por meio dos princípios de fé, amor, lealdade,
-              caridade e desenvolvimento moral.
+              O Bethel Nº 011 de Caldas Novas, Goiás, integra a Ordem Internacional das Filhas de Jó,
+              organização dedicada à formação de jovens por meio dos valores da fé, liderança, amizade,
+              responsabilidade e serviço à comunidade.
             </p>
             <p>
-              Fundado com o propósito de proporcionar às jovens um ambiente de crescimento pessoal e
-              coletivo, o Betel Nº 011 tem desempenhado um papel relevante na formação de
-              cidadãs comprometidas com a sociedade. Ao longo de sua trajetória, inúmeras jovens passaram
-              por suas fileiras, desenvolvendo habilidades de liderança, oratória, organização, trabalho
-              em equipe e responsabilidade social.
+              O sonho de fundar um Bethel em Caldas Novas surgiu em 2009, idealizado pelas jovens
+              Marina B. e Ingrid G. Com o apoio das Lojas Maçônicas da cidade, especialmente do
+              Tio José Henrique B., o projeto começou a se concretizar em 2014. Após a busca pelas
+              jovens fundadoras e o auxílio fundamental do Bethel de Catalão, que orientou todo o
+              processo de fundação, o Bethel Nº 011 foi oficialmente instituído em{' '}
+              <strong style={{ color: '#fff' }}>24 de novembro de 2014</strong>, na Loja Maçônica
+              Thermas de Caldas.
             </p>
             <p>
-              A escolha do nome do Betel representa o compromisso permanente com os ideais de
-              honra, integridade e serviço à comunidade, valores que servem de inspiração
-              para todas as integrantes da instituição.
+              Desde sua fundação, o Bethel tem promovido ações beneficentes, atividades culturais,
+              projetos sociais e oportunidades de desenvolvimento para suas integrantes, formando
+              jovens líderes comprometidas com a sociedade.
             </p>
+
+            <h2 className="text-xl md:text-2xl font-black text-white pt-6">Colmeia Pequenos Lírios</h2>
             <p>
-              Durante sua existência, o Betel tem promovido diversas atividades beneficentes,
-              campanhas solidárias, eventos culturais, projetos educacionais e ações voltadas ao
-              fortalecimento da juventude. Além disso, participa ativamente dos congressos e eventos
-              das Filhas de Jó, contribuindo para o crescimento da instituição no Brasil.
+              Em <strong style={{ color: '#fff' }}>31 de maio de 2025</strong>, durante a XX Gestão
+              Administrativa do Bethel Nº 011, foi fundada a Colmeia Pequenos Lírios, com a iniciação
+              de três Abelhinhas. Na ocasião, a Honorável Rainha era Laura Q., o Casal Guardião era
+              formado pela Tia Bruna Guerino e pelo Tio Heitor Ricieri, e a Apicultora era Ingrid
+              Gontijo. A criação da Colmeia representou um importante passo para a continuidade do
+              trabalho de formação de novas gerações dentro da Ordem.
             </p>
+
+            <h2 className="text-xl md:text-2xl font-black text-white pt-6">Galeria de Misses</h2>
             <p>
-              As Filhas de Jó (Job's Daughters International), fundadas nos Estados Unidos em 1920
-              por Ethel T. Wead Mick, inspiram-se na passagem bíblica do Livro de Jó, na qual se diz
-              que "em toda a terra não se encontraram mulheres tão formosas como as filhas de Jó".
-              A organização reúne jovens entre 10 e 20 anos em torno dos valores da fé, da família
-              e da caridade.
+              Ao longo de sua trajetória, o Bethel Nº 011 conquistou importantes reconhecimentos
+              estaduais, destacando-se:
             </p>
+            <ul className="space-y-2.5">
+              <li className="flex gap-3">
+                <span style={{ color: '#6d28d9' }}>♦</span>
+                <span><strong style={{ color: '#fff' }}>Laysa do Carmo R.</strong> — Miss Filha de Jó Goiás 2017/2018</span>
+              </li>
+              <li className="flex gap-3">
+                <span style={{ color: '#6d28d9' }}>♦</span>
+                <span><strong style={{ color: '#fff' }}>Gabriela S.</strong> — Miss Simpatia Goiás 2022/2023</span>
+              </li>
+            </ul>
+
+            <h2 className="text-xl md:text-2xl font-black text-white pt-6">Legado</h2>
             <p>
-              Atualmente, o Betel Nº 011 continua sua missão de formar jovens
-              preparadas para os desafios da vida, promovendo valores éticos e incentivando o exercício
-              da liderança e da cidadania. Sua história é marcada pelo compromisso com a juventude, pela
-              busca constante da excelência e pela construção de um legado de amizade e serviço à
-              comunidade.
+              Ao longo dos anos, o Bethel Nº 011 construiu uma história marcada pela amizade,
+              liderança, serviço e crescimento pessoal. Por meio de suas atividades e projetos, tem
+              contribuído para a formação de jovens comprometidas com valores éticos e com o bem-estar
+              da comunidade. Seu legado permanece vivo na trajetória de cada integrante que passou pela
+              instituição e nas futuras gerações que continuarão fortalecendo os princípios das Filhas
+              de Jó.
+            </p>
+
+            <h2 className="text-xl md:text-2xl font-black text-white pt-6">Contato</h2>
+            <p>
+              E-mail:{' '}
+              <a href="mailto:bethel011go@gmail.com" style={{ color: '#a78bfa' }}>bethel011go@gmail.com</a>
+              <br />
+              Instagram:{' '}
+              <a href="https://instagram.com/bethel11go" target="_blank" rel="noopener noreferrer" style={{ color: '#a78bfa' }}>@bethel11go</a>
             </p>
           </div>
         </main>
