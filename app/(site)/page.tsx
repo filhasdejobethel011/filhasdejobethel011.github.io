@@ -21,7 +21,7 @@ export default function Home() {
       overlayText={{ part1: 'Filhas', part2: 'de Jó' }}
       instagramHandle="@bethel11go"
       socialLinks={[]}
-      locationText="Betel Nº 011 — Caldas Novas/GO"
+      locationText="Bethel Nº 011 — Caldas Novas/GO"
       className="w-full h-full"
     />
   )

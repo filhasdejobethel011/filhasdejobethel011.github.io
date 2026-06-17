@@ -102,7 +102,7 @@ export default function LoginPage() {
               overlayText={{ part1: 'Filhas', part2: 'de Jó' }}
               instagramHandle="@bethel11go"
               socialLinks={[]}
-              locationText="Betel Nº 011 — Caldas Novas/GO"
+              locationText="Bethel Nº 011 — Caldas Novas/GO"
               className="w-full h-full"
             />
           </div>
@@ -120,7 +120,7 @@ export default function LoginPage() {
             {/* Nome */}
             <div style={{ position:'absolute', bottom:'8%', zIndex:3, textAlign:'center', opacity:0, animation:'fadeUp .6s ease .5s forwards' }}>
               <div style={{ fontFamily:"'DM Sans',sans-serif", fontSize:26, fontWeight:800, color:'#fff', letterSpacing:'-.01em' }}>Filhas de Jó</div>
-              <div style={{ fontSize:12, color:'rgba(255,255,255,.4)', letterSpacing:'.2em', textTransform:'uppercase', marginTop:4 }}>Betel Nº 011</div>
+              <div style={{ fontSize:12, color:'rgba(255,255,255,.4)', letterSpacing:'.2em', textTransform:'uppercase', marginTop:4 }}>Bethel Nº 011</div>
             </div>
           </div>
         )}
@@ -137,7 +137,7 @@ export default function LoginPage() {
 
                 <div style={{ marginBottom:24 }}>
                   <div style={{ fontFamily:"'DM Sans',sans-serif", fontSize:20, fontWeight:800, color:'#fff', letterSpacing:'-.01em' }}>Filhas de Jó</div>
-                  <div style={{ fontSize:11, color:'rgba(255,255,255,.4)', letterSpacing:'.18em', textTransform:'uppercase', marginTop:3 }}>Betel Nº 011</div>
+                  <div style={{ fontSize:11, color:'rgba(255,255,255,.4)', letterSpacing:'.18em', textTransform:'uppercase', marginTop:3 }}>Bethel Nº 011</div>
                 </div>
 
                 {/* Tabs minimalistas */}

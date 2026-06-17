@@ -5,8 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Betel Nº 011 — Lírios de Keren",
-  description: "Betel Nº 011 Lírios de Keren — Caldas Novas/GO — Filhas de Jó Internacional",
+  title: "Bethel Nº 011 — Lírios de Keren",
+  description: "Bethel Nº 011 Lírios de Keren — Caldas Novas/GO — Filhas de Jó Internacional",
 };
 
 export default function RootLayout({

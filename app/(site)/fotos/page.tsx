@@ -13,7 +13,7 @@ export default function FotosPage() {
         <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: '#6d28d9' }}>Galeria</p>
         <h1 className="text-3xl md:text-4xl font-black tracking-tight mb-6 md:mb-8">Fotos</h1>
         <p className="text-base leading-relaxed mb-10" style={{ color: 'rgba(255,255,255,0.6)' }}>
-          Momentos e registros do Betel Nº 011.
+          Momentos e registros do Bethel Nº 011.
         </p>
 
         {/* Masonry: ~8 fotos por coluna (6 colunas no desktop) */}

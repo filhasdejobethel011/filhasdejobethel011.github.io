@@ -144,7 +144,7 @@ export const MinimalistHero = ({
         </div>
       </div>
 
-      {/* Logo — topo esquerdo (emblema do Betel) */}
+      {/* Logo — topo esquerdo (emblema do Bethel) */}
       {logoSrc && (
         <img
           className="mh-logo"

@@ -2,7 +2,7 @@ import PublicNav from '@/components/PublicNav'
 
 type Evento = { dia: string; mes: string; titulo: string; obs?: string }
 
-// Agenda do Betel (ordem cronológica)
+// Agenda do Bethel (ordem cronológica)
 const AGENDA: Evento[] = [
   { dia: '20',     mes: 'JUN',     titulo: 'Cerimônia das Rosas' },
   { dia: '26',     mes: 'JUN',     titulo: 'Festa de Encerramento de Semestre', obs: 'Loja Maçônica Vale do Rio Quente' },
@@ -18,7 +18,7 @@ export default function EventosPage() {
         <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: '#6d28d9' }}>Agenda</p>
         <h1 className="text-3xl md:text-4xl font-black tracking-tight mb-3">Eventos &amp; Notícias</h1>
         <p className="text-base leading-relaxed mb-10" style={{ color: 'rgba(255,255,255,0.6)' }}>
-          Calendário de atividades do Betel Nº 011.
+          Calendário de atividades do Bethel Nº 011.
         </p>
 
         <div className="space-y-3">

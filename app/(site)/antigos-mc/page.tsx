@@ -1,7 +1,7 @@
 import PublicNav from '@/components/PublicNav'
 import { asset } from '@/lib/asset'
 
-// Honoráveis Rainhas (Past Honored Queens) do Betel Nº 011.
+// Honoráveis Rainhas (Past Honored Queens) do Bethel Nº 011.
 // Ordem alfabética por enquanto — ajustar para a ordem das gestões quando confirmada.
 const RAINHAS = [
   { n: 1, nome: 'Bárbara' },
@@ -23,7 +23,7 @@ export default function AntigosMCPage() {
         <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: '#6d28d9' }}>Galeria de Honra</p>
         <h1 className="text-3xl md:text-4xl font-black tracking-tight mb-6 md:mb-8">Past HQ</h1>
         <p className="text-base leading-relaxed mb-10" style={{ color: 'rgba(255,255,255,0.6)' }}>
-          Homenagem às Honoráveis Rainhas (Past Honored Queens) que conduziram o Betel Nº 011.
+          Homenagem às Honoráveis Rainhas (Past Honored Queens) que conduziram o Bethel Nº 011.
         </p>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
