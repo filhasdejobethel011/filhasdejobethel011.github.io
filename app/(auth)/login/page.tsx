@@ -8,7 +8,7 @@ import { asset } from '@/lib/asset'
 
 export default function LoginPage() {
   const [tab, setTab] = useState<'login' | 'signup'>('login')
-  const [phase, setPhase] = useState<'hero' | 'splash' | 'form'>('hero')
+  const [phase, setPhase] = useState<'hero' | 'splash' | 'form'>('form')
   const [email, setEmail] = useState('')
   const [senha, setSenha] = useState('')
   const [nome, setNome] = useState('')
@@ -128,12 +128,12 @@ export default function LoginPage() {
         {/* ── FORM — painel dividido (Jacques + formulário) ── */}
         {phase === 'form' && (
           <div style={{ position:'fixed', inset:0, zIndex:60, display:'flex', alignItems:'center', justifyContent:'center', background:'rgba(8,2,16,.75)', backdropFilter:'blur(12px)' }}
-            onClick={e => { if (e.target === e.currentTarget) setPhase('hero') }}>
+            onClick={e => { if (e.target === e.currentTarget) router.push('/') }}>
             <div className="login-card" style={{ width:'100%', maxWidth:420, padding:'44px 40px', display:'flex', flexDirection:'column', justifyContent:'center', position:'relative', borderRadius:24, border:'1px solid rgba(255,255,255,.08)', boxShadow:'0 40px 120px rgba(0,0,0,.7)', animation:'cardIn .55s cubic-bezier(.22,1,.36,1) both', background:'#0c0814' }}>
 
               {/* Formulário */}
               <div>
-                <button onClick={() => setPhase('hero')} style={{ position:'absolute', top:18, right:18, width:32, height:32, borderRadius:'50%', background:'rgba(255,255,255,.05)', border:'1px solid rgba(255,255,255,.1)', color:'rgba(255,255,255,.5)', cursor:'pointer', fontSize:18, display:'flex', alignItems:'center', justifyContent:'center' }}>×</button>
+                <button onClick={() => router.push('/')} style={{ position:'absolute', top:18, right:18, width:32, height:32, borderRadius:'50%', background:'rgba(255,255,255,.05)', border:'1px solid rgba(255,255,255,.1)', color:'rgba(255,255,255,.5)', cursor:'pointer', fontSize:18, display:'flex', alignItems:'center', justifyContent:'center' }}>×</button>
 
                 <div style={{ marginBottom:24 }}>
                   <div style={{ fontFamily:"'DM Sans',sans-serif", fontSize:20, fontWeight:800, color:'#fff', letterSpacing:'-.01em' }}>Filhas de Jó</div>
