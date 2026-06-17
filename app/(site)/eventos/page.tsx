@@ -4,21 +4,10 @@ type Evento = { dia: string; mes: string; titulo: string; obs?: string }
 
 // Agenda do Betel (ordem cronológica)
 const AGENDA: Evento[] = [
-  { dia: '01',        mes: 'AGO', titulo: 'Cerimônia de Instalação e Cerimônia do Abraço' },
-  { dia: '22',        mes: 'AGO', titulo: 'Filantropia' },
-  { dia: '04 a 06',   mes: 'SET', titulo: 'Olimpíadas Filhas de Jó' },
-  { dia: '07',        mes: 'SET', titulo: 'Dia do Patriota' },
-  { dia: '27',        mes: 'SET', titulo: 'Filantropia 02' },
-  { dia: '01',        mes: 'OUT', titulo: 'Filantropia 04', obs: 'Doação de Sangue' },
-  { dia: '03',        mes: 'OUT', titulo: 'Filantropia 03', obs: 'Dia das Crianças' },
-  { dia: '18',        mes: 'OUT', titulo: 'Dia Educacional', obs: 'Feira das Profissões' },
-  { dia: '21',        mes: 'NOV', titulo: 'Cerimônia de Iniciação e Apresentação de Novos Membros' },
-  { dia: '22',        mes: 'NOV', titulo: 'Dia em Memória a Ethel T. Wead Mick' },
-  { dia: '22',        mes: 'NOV', titulo: 'Entretenimento 05' },
-  { dia: '29',        mes: 'NOV', titulo: 'Dia do Meu Governo' },
-  { dia: '06',        mes: 'DEZ', titulo: 'Dia de Conforto', obs: 'Visita ao Lar de Idosos' },
-  { dia: '13',        mes: 'DEZ', titulo: 'Festival de Sorvete' },
-  { dia: '20',        mes: 'DEZ', titulo: 'Filantropia 06', obs: 'Doação de Alimentos' },
+  { dia: '20',     mes: 'JUN',     titulo: 'Cerimônia das Rosas' },
+  { dia: '26',     mes: 'JUN',     titulo: 'Festa de Encerramento de Semestre', obs: 'Loja Maçônica Vale do Rio Quente' },
+  { dia: '27',     mes: 'JUN',     titulo: 'Prestação de Contas + Posse da XXIV Gestão Administrativa' },
+  { dia: '31/07',  mes: 'A 02/08', titulo: 'Grande Sessão GO e DF' },
 ]
 
 export default function EventosPage() {
