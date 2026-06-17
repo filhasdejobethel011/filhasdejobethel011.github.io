@@ -17,7 +17,7 @@ export default function MensalidadesPage() {
     mes: new Date().getMonth() + 1,
     ano: new Date().getFullYear(),
     valor: '',
-    status: 'pendente' as 'pago' | 'pendente' | 'atrasado',
+    status: 'nao_pago' as 'pago' | 'nao_pago' | 'isento',
   })
 
   useEffect(() => {
@@ -46,7 +46,7 @@ export default function MensalidadesPage() {
     fetchDados()
   }
 
-  async function alterarStatus(id: string, status: 'pago' | 'pendente' | 'atrasado') {
+  async function alterarStatus(id: string, status: 'pago' | 'nao_pago' | 'isento') {
     await supabase.from('mensalidades').update({
       status,
       data_pagamento: status === 'pago' ? new Date().toISOString() : null,
@@ -56,18 +56,21 @@ export default function MensalidadesPage() {
 
   const statusIcon = (s: string) => {
     if (s === 'pago') return <CheckCircle size={16} className="text-green-500" />
-    if (s === 'atrasado') return <AlertCircle size={16} className="text-red-500" />
+    if (s === 'isento') return <AlertCircle size={16} className="text-gray-400" />
     return <Clock size={16} className="text-yellow-500" />
   }
 
   const statusColor = (s: string) =>
     s === 'pago' ? 'bg-green-100 text-green-700' :
-    s === 'atrasado' ? 'bg-red-100 text-red-700' :
+    s === 'isento' ? 'bg-gray-100 text-gray-600' :
     'bg-yellow-100 text-yellow-700'
 
+  const statusLabel = (s: string) =>
+    s === 'pago' ? 'Pago' : s === 'isento' ? 'Isento' : 'Em aberto'
+
   const pagas = mensalidades.filter(m => m.status === 'pago').length
-  const pendentes = mensalidades.filter(m => m.status === 'pendente').length
-  const atrasadas = mensalidades.filter(m => m.status === 'atrasado').length
+  const emAberto = mensalidades.filter(m => m.status === 'nao_pago').length
+  const isentas = mensalidades.filter(m => m.status === 'isento').length
 
   return (
     <div>
@@ -78,11 +81,11 @@ export default function MensalidadesPage() {
         </div>
         <div className="flex items-center gap-3">
           <select value={anoSelecionado} onChange={e => setAnoSelecionado(Number(e.target.value))}
-            className="border border-gray-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-red-200 focus:border-red-300">
+            className="border border-gray-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-purple-200 focus:border-purple-300">
             {[2023, 2024, 2025, 2026].map(a => <option key={a}>{a}</option>)}
           </select>
           <button onClick={() => setShowForm(!showForm)}
-            className="flex items-center gap-2 text-white text-sm font-medium px-4 py-2.5 rounded-xl shadow-sm transition-all hover:opacity-90" style={{ background: "linear-gradient(135deg, #6d28d9, #8B1A1A)" }}>
+            className="flex items-center gap-2 text-white text-sm font-medium px-4 py-2.5 rounded-xl shadow-sm transition-all hover:opacity-90" style={{ background: "linear-gradient(135deg, #6d28d9, #4c1d95)" }}>
             <Plus size={16} />
             Lançar
           </button>
@@ -101,15 +104,15 @@ export default function MensalidadesPage() {
         <div className="bg-yellow-50 border border-yellow-100 rounded-2xl p-4 flex items-center gap-3">
           <Clock className="text-yellow-500" />
           <div>
-            <p className="text-2xl font-bold text-yellow-700">{pendentes}</p>
-            <p className="text-xs text-yellow-600">Pendentes</p>
+            <p className="text-2xl font-bold text-yellow-700">{emAberto}</p>
+            <p className="text-xs text-yellow-600">Em aberto</p>
           </div>
         </div>
-        <div className="bg-red-50 border border-red-100 rounded-2xl p-4 flex items-center gap-3">
-          <AlertCircle className="text-red-500" />
+        <div className="bg-gray-50 border border-gray-100 rounded-2xl p-4 flex items-center gap-3">
+          <AlertCircle className="text-gray-400" />
           <div>
-            <p className="text-2xl font-bold text-red-700">{atrasadas}</p>
-            <p className="text-xs text-red-600">Atrasadas</p>
+            <p className="text-2xl font-bold text-gray-700">{isentas}</p>
+            <p className="text-xs text-gray-500">Isentas</p>
           </div>
         </div>
       </div>
@@ -119,26 +122,26 @@ export default function MensalidadesPage() {
           <h2 className="font-semibold text-gray-800 mb-4">Lançar Mensalidade</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <select required value={form.membro_id} onChange={e => setForm({ ...form, membro_id: e.target.value })}
-              className="border border-gray-200 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-red-200 focus:border-red-300">
+              className="border border-gray-200 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-purple-200 focus:border-purple-300">
               <option value="">Selecionar membro</option>
               {membros.map(m => <option key={m.id} value={m.id}>{m.nome}</option>)}
             </select>
             <select value={form.mes} onChange={e => setForm({ ...form, mes: Number(e.target.value) })}
-              className="border border-gray-200 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-red-200 focus:border-red-300">
+              className="border border-gray-200 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-purple-200 focus:border-purple-300">
               {meses.map((m, i) => <option key={i} value={i + 1}>{m}</option>)}
             </select>
             <input required type="number" step="0.01" min="0" placeholder="Valor (R$)" value={form.valor}
               onChange={e => setForm({ ...form, valor: e.target.value })}
-              className="border border-gray-200 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-red-200 focus:border-red-300" />
-            <select value={form.status} onChange={e => setForm({ ...form, status: e.target.value as 'pago' | 'pendente' | 'atrasado' })}
-              className="border border-gray-200 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-red-200 focus:border-red-300">
+              className="border border-gray-200 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-purple-200 focus:border-purple-300" />
+            <select value={form.status} onChange={e => setForm({ ...form, status: e.target.value as 'pago' | 'nao_pago' | 'isento' })}
+              className="border border-gray-200 rounded-xl px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-purple-200 focus:border-purple-300">
+              <option value="nao_pago">Em aberto</option>
               <option value="pago">Pago</option>
-              <option value="pendente">Pendente</option>
-              <option value="atrasado">Atrasado</option>
+              <option value="isento">Isento</option>
             </select>
           </div>
           <div className="flex gap-3 mt-4">
-            <button type="submit" className="text-white text-sm font-medium px-5 py-2 rounded-xl hover:opacity-90" style={{ background: "linear-gradient(135deg, #6d28d9, #8B1A1A)" }}>Salvar</button>
+            <button type="submit" className="text-white text-sm font-medium px-5 py-2 rounded-xl hover:opacity-90" style={{ background: "linear-gradient(135deg, #6d28d9, #4c1d95)" }}>Salvar</button>
             <button type="button" onClick={() => setShowForm(false)} className="border border-gray-200 px-6 py-2 rounded-xl text-sm hover:bg-gray-50">Cancelar</button>
           </div>
         </form>
@@ -173,20 +176,20 @@ export default function MensalidadesPage() {
                   <td className="px-6 py-4">
                     <span className={`inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs font-medium ${statusColor(ms.status)}`}>
                       {statusIcon(ms.status)}
-                      {ms.status}
+                      {statusLabel(ms.status)}
                     </span>
                   </td>
                   <td className="px-6 py-4">
                     {ms.status !== 'pago' && (
                       <button onClick={() => alterarStatus(ms.id, 'pago')}
-                        className="text-xs text-red-600 hover:text-blue-800 font-medium mr-3">
+                        className="text-xs text-green-600 hover:text-green-800 font-medium mr-3">
                         Marcar pago
                       </button>
                     )}
-                    {ms.status === 'pendente' && (
-                      <button onClick={() => alterarStatus(ms.id, 'atrasado')}
-                        className="text-xs text-red-500 hover:text-red-700 font-medium">
-                        Marcar atrasado
+                    {ms.status === 'nao_pago' && (
+                      <button onClick={() => alterarStatus(ms.id, 'isento')}
+                        className="text-xs text-gray-500 hover:text-gray-700 font-medium">
+                        Isentar
                       </button>
                     )}
                   </td>

@@ -34,7 +34,7 @@ export type Mensalidade = {
   mes: number
   ano: number
   valor: number
-  status: 'pago' | 'pendente' | 'atrasado'
+  status: 'pago' | 'nao_pago' | 'isento'
   data_pagamento?: string
   created_at: string
 }
