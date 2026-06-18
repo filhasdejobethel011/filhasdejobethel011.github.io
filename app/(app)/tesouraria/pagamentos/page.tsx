@@ -126,7 +126,7 @@ function TabMensalidades({ mes, ano, registrar, onMudou }: { mes: number; ano: n
         const isSaving = saving === membro.id
         return (
           <div key={membro.id}
-            className={`flex items-center justify-between gap-4 px-4 sm:px-6 py-4 hover:bg-gray-50 transition-colors ${i < membros.length - 1 ? 'border-b border-gray-50' : ''}`}>
+            className={`flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 px-4 sm:px-6 py-4 hover:bg-gray-50 transition-colors ${i < membros.length - 1 ? 'border-b border-gray-50' : ''}`}>
             <div className="flex items-center gap-3 min-w-0">
               <div className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 font-bold text-sm"
                 style={{ background: '#f3f4f6', color: '#6b7280' }}>
@@ -134,12 +134,12 @@ function TabMensalidades({ mes, ano, registrar, onMudou }: { mes: number; ano: n
               </div>
               <p className="font-bold text-gray-900 uppercase tracking-tight text-sm truncate">{membro.nome}</p>
             </div>
-            <div className="flex items-center bg-gray-100 rounded-xl p-1 flex-shrink-0">
+            <div className="flex items-center bg-gray-100 rounded-xl p-1 flex-shrink-0 w-full sm:w-auto">
               {opcoes.map(({ s, label, bg, color }) => {
                 const active = status === s
                 return (
                   <button key={s} onClick={() => setStatus(membro.id, s)} disabled={isSaving}
-                    className="px-3 sm:px-4 py-1.5 text-[11px] sm:text-xs font-bold uppercase tracking-wide rounded-lg transition-all"
+                    className="flex-1 sm:flex-none px-3 sm:px-4 py-1.5 text-[11px] sm:text-xs font-bold uppercase tracking-wide rounded-lg transition-all"
                     style={active
                       ? { background: bg, color, boxShadow: '0 1px 2px rgba(0,0,0,0.06)' }
                       : { background: 'transparent', color: '#9ca3af' }}>

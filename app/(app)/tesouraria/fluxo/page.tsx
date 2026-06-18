@@ -94,13 +94,13 @@ export default function FluxoPage() {
 
       {/* Cards */}
       <div className="grid grid-cols-2 gap-4">
-        <div className="bg-white rounded-xl border border-gray-100 px-6 py-5">
+        <div className="bg-white rounded-xl border border-gray-100 px-4 sm:px-6 py-5">
           <p className="text-xs text-gray-400 mb-3">Total entradas</p>
-          <p className="text-3xl font-bold" style={{ color: '#16a34a' }}>{fmt(entradas)}</p>
+          <p className="text-xl sm:text-3xl font-bold whitespace-nowrap" style={{ color: '#16a34a' }}>{fmt(entradas)}</p>
         </div>
-        <div className="bg-white rounded-xl border border-gray-100 px-6 py-5">
+        <div className="bg-white rounded-xl border border-gray-100 px-4 sm:px-6 py-5">
           <p className="text-xs text-gray-400 mb-3">Total saídas</p>
-          <p className="text-3xl font-bold" style={{ color: '#6d28d9' }}>{fmt(saidas)}</p>
+          <p className="text-xl sm:text-3xl font-bold whitespace-nowrap" style={{ color: '#6d28d9' }}>{fmt(saidas)}</p>
         </div>
       </div>
 
