@@ -2,8 +2,8 @@ import PublicNav from '@/components/PublicNav'
 import { asset } from '@/lib/asset'
 
 // Colunas laterais de fotos (do Drive). Duplicadas para o loop ficar contínuo.
-const COL_ESQ = [1, 3, 5, 7]
-const COL_DIR = [2, 4, 6, 8]
+const COL_ESQ = [1, 3, 5, 7, 9, 11, 13, 15]
+const COL_DIR = [2, 4, 6, 8, 10, 12, 14, 16]
 
 function ColunaFotos({ nums, dir, lado }: { nums: number[]; dir: 'up' | 'down'; lado: 'left' | 'right' }) {
   const lista = [...nums, ...nums] // duplica para loop sem emenda
