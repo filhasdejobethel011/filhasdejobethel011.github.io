@@ -103,6 +103,11 @@ export default function HistoriaPage() {
               de Jó.
             </p>
 
+            <h2 className="text-xl md:text-2xl font-black text-white pt-6">Criação</h2>
+            <p>
+              Este site foi desenvolvido pela gestão da <strong style={{ color: '#fff' }}>Vitória Vecchi</strong>.
+            </p>
+
             <h2 className="text-xl md:text-2xl font-black text-white pt-6">Contato</h2>
             <p>
               E-mail:{' '}
